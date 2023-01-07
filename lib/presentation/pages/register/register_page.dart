@@ -1,7 +1,6 @@
-import 'package:book_lover/config/constants/assets.dart';
 import 'package:flutter/material.dart';
 
-import '../../components/circular_button.dart';
+import '../../components/custom_switcher.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -11,15 +10,21 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
+  bool switcherValue = false;
+  void onChanged(bool? val) {
+    setState(() {
+      switcherValue = val ?? false;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Center(
-        child: CircularButton(
-          onPressed: () {},
-          svgIcon: Assets.icons.search,
-        ),
+        child: CustomSwitcher(onChanged: onChanged, switcherValue: switcherValue),
       ),
     );
   }
 }
+

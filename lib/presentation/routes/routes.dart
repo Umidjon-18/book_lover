@@ -1,8 +1,10 @@
+import 'package:book_lover/presentation/pages/home/home_page.dart';
 import 'package:book_lover/presentation/pages/register/register_page.dart';
 import 'package:flutter/material.dart';
 
 class Routes {
-  static const registerPage = '/';
+  static const registerPage = '/registerPage';
+  static const homePage = '/';
 
   static Route<dynamic> generateRoute(RouteSettings routeSettings) {
     try {
@@ -13,6 +15,12 @@ class Routes {
           return MaterialPageRoute(
             builder: (context) {
               return const RegisterPage();
+            },
+          );
+        case homePage:
+          return MaterialPageRoute(
+            builder: (context) {
+              return const HomePage();
             },
           );
         default:
