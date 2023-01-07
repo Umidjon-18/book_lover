@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../../../config/constants/app_colors.dart';
 import '../../../config/constants/assets.dart';
@@ -37,7 +38,36 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
+        selectedFontSize: 12.sp,
+        unselectedFontSize: 12.sp,
+        selectedItemColor: AppColors.text1,
+        unselectedItemColor: AppColors.text3,
+        items: [
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(Assets.icons.home),
+            label: "Home",
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(Assets.icons.trending),
+            label: "Trending",
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(Assets.icons.save),
+            label: "Save",
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(Assets.icons.inbox),
+            label: "Inbox",
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(Assets.icons.settings),
+            label: "Account",
+          ),
+        ],
+      ),
     );
   }
 }
-
