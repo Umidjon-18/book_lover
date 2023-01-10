@@ -1,3 +1,4 @@
+import 'package:book_lover/config/constants/local_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -35,7 +36,7 @@ class AuthorsForYouComponent extends StatelessWidget {
           SizedBox(
             height: 170.h,
             child: ListView.separated(
-              itemCount: 7,
+              itemCount: authors.length,
               scrollDirection: Axis.horizontal,
               physics: const BouncingScrollPhysics(),
               padding: EdgeInsets.only(left: 24.w),
@@ -44,17 +45,17 @@ class AuthorsForYouComponent extends StatelessWidget {
                   children: [
                     CircleAvatar(
                       radius: 54.r,
-                      foregroundImage: AssetImage(Assets.images.author1),
+                      foregroundImage: AssetImage(authors[index].image),
                     ),
                     Padding(
                       padding: EdgeInsets.only(top: 12.h, bottom: 8.h),
                       child: Text(
-                        'David Johnson',
+                        authors[index].name,
                         style: AppTextStyles.h3,
                       ),
                     ),
                     Text(
-                      'Horror',
+                      authors[index].category,
                       style: AppTextStyles.h6.copyWith(color: AppColors.text2),
                     ),
                   ],

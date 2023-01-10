@@ -1,4 +1,6 @@
+import 'package:book_lover/data/models/book_model.dart';
 import 'package:book_lover/presentation/components/book_picture.dart';
+import 'package:book_lover/presentation/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -11,9 +13,11 @@ import '../../config/constants/assets.dart';
 class BookItem extends StatelessWidget {
   BookItem({
     Key? key,
+    required this.bookModel,
     this.bottomBorder = true,
   }) : super(key: key);
   bool bottomBorder;
+  BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -24,18 +28,24 @@ class BookItem extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              BookPicture(imagePath: Assets.images.book1),
+              BookPicture(imagePath: bookModel.image),
               Flexible(
                 fit: FlexFit.tight,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("My life as an ice cream...", style: AppTextStyles.h3),
-                    Padding(
-                      padding: EdgeInsets.only(top: 8.h, bottom: 12.h),
-                      child: Text("Adventure", style: AppTextStyles.h5.copyWith(color: AppColors.text2)),
+                    SizedBox(
+                      width: 200.w,
+                      child: Text(bookModel.name, style: AppTextStyles.h3),
                     ),
-                    Text("Adib Khorram", style: AppTextStyles.h5.copyWith(color: AppColors.text2)),
+                    InkWell(
+                      onTap: () => Navigator.pushNamed(context, Routes.categoryPage),
+                      child: Padding(
+                        padding: EdgeInsets.only(top: 8.h, bottom: 12.h),
+                        child: Text(bookModel.category, style: AppTextStyles.h5.copyWith(color: AppColors.text2)),
+                      ),
+                    ),
+                    Text(bookModel.author, style: AppTextStyles.h5.copyWith(color: AppColors.text2)),
                   ],
                 ),
               ),
@@ -48,12 +58,13 @@ class BookItem extends StatelessWidget {
             ],
           ),
         ),
-        if(bottomBorder)Container(
-          height: 1.h,
-          width: double.maxFinite,
-          color: AppColors.border,
-          margin: EdgeInsets.only(right: 24.w, bottom: 24.h),
-        ),
+        if (bottomBorder)
+          Container(
+            height: 1.h,
+            width: double.maxFinite,
+            color: AppColors.border,
+            margin: EdgeInsets.only(right: 24.w, bottom: 24.h),
+          ),
       ],
     );
   }

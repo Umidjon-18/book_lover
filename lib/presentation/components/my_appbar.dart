@@ -1,3 +1,4 @@
+import 'package:book_lover/presentation/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -16,8 +17,12 @@ class MyAppBar extends StatelessWidget with PreferredSizeWidget {
         children: [
           SvgPicture.asset(Assets.icons.logo),
           const Spacer(),
-          CircularButton(onPressed: () {}, svgIcon: Assets.icons.search),
-          CircularButton(onPressed: () {}, svgIcon: Assets.icons.menu),
+          CircularButton(
+            onPressed: () => Navigator.pushNamed(context, Routes.searchPage),
+            svgIcon: Assets.icons.search,
+          ),
+          CircularButton(
+              onPressed: () => Navigator.pushNamed(context, Routes.categorySearchPage), svgIcon: Assets.icons.menu),
         ],
       ),
     );

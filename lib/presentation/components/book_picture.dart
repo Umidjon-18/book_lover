@@ -25,10 +25,10 @@ class BookPicture extends StatelessWidget {
       margin: margin ?? EdgeInsets.only(right: 24.w),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(borderRadius?[0]??2.r),
-          topRight: Radius.circular(borderRadius?[1]??6.r),
-          bottomRight: Radius.circular(borderRadius?[2]??6.r),
-          bottomLeft: Radius.circular(borderRadius?[3]??2.r),
+          topLeft: Radius.circular(borderRadius?[0] ?? 2.r),
+          topRight: Radius.circular(borderRadius?[1] ?? 6.r),
+          bottomRight: Radius.circular(borderRadius?[2] ?? 6.r),
+          bottomLeft: Radius.circular(borderRadius?[3] ?? 2.r),
         ),
         image: DecorationImage(
           image: AssetImage(imagePath),

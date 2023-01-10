@@ -1,3 +1,4 @@
+import 'package:book_lover/config/constants/local_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -36,7 +37,7 @@ class YouMayLoveComponent extends StatelessWidget {
           SizedBox(
             height: 235.h,
             child: ListView.builder(
-              itemCount: 7,
+              itemCount: books.length,
               scrollDirection: Axis.horizontal,
               physics: const BouncingScrollPhysics(),
               padding: EdgeInsets.only(left: 24.w),
@@ -48,17 +49,17 @@ class YouMayLoveComponent extends StatelessWidget {
                       width: 108.w,
                       height: 166.h,
                       borderRadius: [4.r, 8.r, 8.r, 4.r],
-                      imagePath: Assets.images.book2,
+                      imagePath: books[index].image,
                     ),
                     Padding(
                       padding: EdgeInsets.only(top: 16.h, bottom: 8.h),
                       child: Text(
-                        'Horror',
+                        books[index].category,
                         style: AppTextStyles.h5.copyWith(color: AppColors.text2),
                       ),
                     ),
                     Text(
-                      'David Johnson',
+                      books[index].author,
                       style: AppTextStyles.h5.copyWith(color: AppColors.border),
                     ),
                   ],

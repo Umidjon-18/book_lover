@@ -1,3 +1,4 @@
+import 'package:book_lover/config/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
 import '../../components/custom_switcher.dart';
@@ -20,6 +21,7 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.bgColor,
       resizeToAvoidBottomInset: false,
       body: Center(
         child: CustomSwitcher(onChanged: onChanged, switcherValue: switcherValue),

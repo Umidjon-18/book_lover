@@ -71,10 +71,44 @@ class _Images extends _AssetsHolder {
   String get book1 => "$basePath/book1.png";
 
   String get book2 => "$basePath/book2.png";
+  
+  String get book3 => "$basePath/book3.png";
+  
+  String get book4 => "$basePath/book4.png";
+  
+  String get book5 => "$basePath/book5.png";
+  
+  String get book6 => "$basePath/book6.png";
+  
+  String get book7 => "$basePath/book7.png";
+  
+  String get book8 => "$basePath/book8.png";
+  
+  String get book9 => "$basePath/book9.png";
+  
+  String get book10 => "$basePath/book10.png";
+  
+  String get book11 => "$basePath/book11.png";
 
   String get banner => "$basePath/banner.png";
 
   String get author1 => "$basePath/author1.png";
+  
+  String get author2 => "$basePath/author2.png";
+  
+  String get author3 => "$basePath/author3.png";
+  
+  String get author4 => "$basePath/author4.png";
+  
+  String get author5 => "$basePath/author5.png";
+  
+  String get author6 => "$basePath/author6.png";
+  
+  String get author7 => "$basePath/author7.png";
+  
+  String get author8 => "$basePath/author8.png";
+  
+  String get author9 => "$basePath/author9.png";
 
   String get buyBook => "$basePath/buybook.png";
   

@@ -1,3 +1,4 @@
+import 'package:book_lover/config/constants/local_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -22,7 +23,7 @@ class TrendingBooksComponent extends StatelessWidget {
           Text("Trending books", style: AppTextStyles.h1),
           Text("Picked from most read books", style: AppTextStyles.h5),
           SizedBox(height: 40.h),
-          ...List.generate(5, (index) => BookItem(bottomBorder: index != 4)),
+          ...List.generate(5, (index) => BookItem(bookModel: books[index],bottomBorder: index != 4)),
         ],
       ),
     );

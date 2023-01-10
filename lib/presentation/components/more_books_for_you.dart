@@ -1,3 +1,4 @@
+import 'package:book_lover/config/constants/local_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -36,7 +37,7 @@ class MoreBooksForYouComponent extends StatelessWidget {
             10,
             (index) => Padding(
               padding: EdgeInsets.only(left: 24.w),
-              child: BookItem(bottomBorder: index != 9),
+              child: BookItem(bookModel: books[index],bottomBorder: index != 9),
             ),
           ),
           Center(
