@@ -22,19 +22,22 @@ class BookPicture extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: width ?? 64.w,
-      height: height ?? 98.h,
-      margin: margin ?? EdgeInsets.only(right: 24.w),
-      child: ClipRRect(
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(borderRadius?[0] ?? 2.r),
-          topRight: Radius.circular(borderRadius?[1] ?? 6.r),
-          bottomRight: Radius.circular(borderRadius?[2] ?? 6.r),
-          bottomLeft: Radius.circular(borderRadius?[3] ?? 2.r),
-        ),
+    return ClipRRect(
+      borderRadius: BorderRadius.only(
+        topLeft: Radius.circular(borderRadius?[0] ?? 2.r),
+        topRight: Radius.circular(borderRadius?[1] ?? 6.r),
+        bottomRight: Radius.circular(borderRadius?[2] ?? 6.r),
+        bottomLeft: Radius.circular(borderRadius?[3] ?? 2.r),
+      ),
+      child: Container(
+        width: width ?? 64.w,
+        height: height ?? 98.h,
+        margin: margin ?? EdgeInsets.only(right: 24.w),
         child: CachedNetworkImage(
+          width: width ?? 64.w,
+          height: height ?? 98.h,
           imageUrl: imagePath,
+          fit: BoxFit.cover,
           placeholder: (context, url) => Shimmer.fromColors(
             baseColor: Colors.grey[300]!,
             highlightColor: Colors.grey[100]!,
@@ -45,7 +48,15 @@ class BookPicture extends StatelessWidget {
             ),
           ),
           errorWidget: (context, url, error) => Container(
-            color: Colors.red,
+            decoration: BoxDecoration(
+              color: Colors.red,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(borderRadius?[0] ?? 2.r),
+                topRight: Radius.circular(borderRadius?[1] ?? 6.r),
+                bottomRight: Radius.circular(borderRadius?[2] ?? 6.r),
+                bottomLeft: Radius.circular(borderRadius?[3] ?? 2.r),
+              ),
+            ),
             child: const Icon(Icons.error),
           ),
         ),

@@ -21,7 +21,7 @@ mixin _$TrendingBooksState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<BookModel> trendingBooks) loaded,
-    required TResult Function() error,
+    required TResult Function(String? error) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -29,7 +29,7 @@ mixin _$TrendingBooksState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<BookModel> trendingBooks)? loaded,
-    TResult? Function()? error,
+    TResult? Function(String? error)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,7 +37,7 @@ mixin _$TrendingBooksState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<BookModel> trendingBooks)? loaded,
-    TResult Function()? error,
+    TResult Function(String? error)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -125,7 +125,7 @@ class _$Initial implements Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<BookModel> trendingBooks) loaded,
-    required TResult Function() error,
+    required TResult Function(String? error) error,
   }) {
     return initial();
   }
@@ -136,7 +136,7 @@ class _$Initial implements Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<BookModel> trendingBooks)? loaded,
-    TResult? Function()? error,
+    TResult? Function(String? error)? error,
   }) {
     return initial?.call();
   }
@@ -147,7 +147,7 @@ class _$Initial implements Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<BookModel> trendingBooks)? loaded,
-    TResult Function()? error,
+    TResult Function(String? error)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -237,7 +237,7 @@ class _$Loading implements Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<BookModel> trendingBooks) loaded,
-    required TResult Function() error,
+    required TResult Function(String? error) error,
   }) {
     return loading();
   }
@@ -248,7 +248,7 @@ class _$Loading implements Loading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<BookModel> trendingBooks)? loaded,
-    TResult? Function()? error,
+    TResult? Function(String? error)? error,
   }) {
     return loading?.call();
   }
@@ -259,7 +259,7 @@ class _$Loading implements Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<BookModel> trendingBooks)? loaded,
-    TResult Function()? error,
+    TResult Function(String? error)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -383,7 +383,7 @@ class _$Loaded implements Loaded {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<BookModel> trendingBooks) loaded,
-    required TResult Function() error,
+    required TResult Function(String? error) error,
   }) {
     return loaded(trendingBooks);
   }
@@ -394,7 +394,7 @@ class _$Loaded implements Loaded {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<BookModel> trendingBooks)? loaded,
-    TResult? Function()? error,
+    TResult? Function(String? error)? error,
   }) {
     return loaded?.call(trendingBooks);
   }
@@ -405,7 +405,7 @@ class _$Loaded implements Loaded {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<BookModel> trendingBooks)? loaded,
-    TResult Function()? error,
+    TResult Function(String? error)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -467,6 +467,8 @@ abstract class _$$TrendingBooksErrorCopyWith<$Res> {
   factory _$$TrendingBooksErrorCopyWith(_$TrendingBooksError value,
           $Res Function(_$TrendingBooksError) then) =
       __$$TrendingBooksErrorCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String? error});
 }
 
 /// @nodoc
@@ -476,26 +478,51 @@ class __$$TrendingBooksErrorCopyWithImpl<$Res>
   __$$TrendingBooksErrorCopyWithImpl(
       _$TrendingBooksError _value, $Res Function(_$TrendingBooksError) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = freezed,
+  }) {
+    return _then(_$TrendingBooksError(
+      error: freezed == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$TrendingBooksError implements TrendingBooksError {
-  const _$TrendingBooksError();
+  const _$TrendingBooksError({this.error});
+
+  @override
+  final String? error;
 
   @override
   String toString() {
-    return 'TrendingBooksState.error()';
+    return 'TrendingBooksState.error(error: $error)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$TrendingBooksError);
+        (other.runtimeType == runtimeType &&
+            other is _$TrendingBooksError &&
+            (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TrendingBooksErrorCopyWith<_$TrendingBooksError> get copyWith =>
+      __$$TrendingBooksErrorCopyWithImpl<_$TrendingBooksError>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -503,9 +530,9 @@ class _$TrendingBooksError implements TrendingBooksError {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<BookModel> trendingBooks) loaded,
-    required TResult Function() error,
+    required TResult Function(String? error) error,
   }) {
-    return error();
+    return error(this.error);
   }
 
   @override
@@ -514,9 +541,9 @@ class _$TrendingBooksError implements TrendingBooksError {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<BookModel> trendingBooks)? loaded,
-    TResult? Function()? error,
+    TResult? Function(String? error)? error,
   }) {
-    return error?.call();
+    return error?.call(this.error);
   }
 
   @override
@@ -525,11 +552,11 @@ class _$TrendingBooksError implements TrendingBooksError {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<BookModel> trendingBooks)? loaded,
-    TResult Function()? error,
+    TResult Function(String? error)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error();
+      return error(this.error);
     }
     return orElse();
   }
@@ -573,5 +600,11 @@ class _$TrendingBooksError implements TrendingBooksError {
 }
 
 abstract class TrendingBooksError implements TrendingBooksState {
-  const factory TrendingBooksError() = _$TrendingBooksError;
+  const factory TrendingBooksError({final String? error}) =
+      _$TrendingBooksError;
+
+  String? get error;
+  @JsonKey(ignore: true)
+  _$$TrendingBooksErrorCopyWith<_$TrendingBooksError> get copyWith =>
+      throw _privateConstructorUsedError;
 }

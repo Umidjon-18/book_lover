@@ -28,8 +28,10 @@ class _MainPageState extends State<MainPage> {
         controller: pageController,
         children: [
           const HomePage(),
-          const TrendingsPage(),
-          const CollectionsPage(),
+          const HomePage(),
+          const HomePage(),
+          // const TrendingsPage(),
+          // const CollectionsPage(),
           const NotificationsPage(),
           Container(),
         ],

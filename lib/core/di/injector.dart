@@ -8,5 +8,5 @@ final getIt = GetIt.instance;
 
 Future<void> setupInjector() async {
   getIt.registerSingleton<RestClient>(RestClient(Dio()));
-  getIt.registerSingleton<BooksRepository>(BookRepositoryImpl());
+  getIt.registerSingleton<BooksRepository>(BooksRepositoryImpl());
 }

@@ -123,6 +123,8 @@ class _Images extends _AssetsHolder {
   String get shareFacebook => "$basePath/share_facebook.png";
   
   String get shareMessenger => "$basePath/share_messenger.png";
+
+  String get notFoundLottie => "$basePath/not_found.json";
 }
 
 class _Videos extends _AssetsHolder {

@@ -1,7 +1,5 @@
 import 'package:book_lover/data/models/book_model.dart';
 import 'package:book_lover/presentation/components/book_item_loading.dart';
-import 'package:book_lover/presentation/pages/home/bloc/keep_reading_cubit.dart';
-import 'package:book_lover/presentation/pages/home/bloc/keep_reading_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,6 +9,9 @@ import '../../../../config/constants/app_colors.dart';
 import '../../../../config/constants/app_text_styles.dart';
 import '../../../../config/constants/assets.dart';
 import '../../../components/book_picture.dart';
+import '../../../components/error.dart';
+import '../bloc/keep_reading/keep_reading_cubit.dart';
+import '../bloc/keep_reading/keep_reading_state.dart';
 
 class KeepReadingComponent extends StatelessWidget {
   const KeepReadingComponent({
@@ -26,7 +27,7 @@ class KeepReadingComponent extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text("Keep reading...", style: AppTextStyles.h1),
-          Text("The books you’re viewing currenly", style: AppTextStyles.h5),
+          Text("The books you're viewing currenly", style: AppTextStyles.h5),
           SizedBox(height: 40.h),
           BlocBuilder<KeepReadingCubit, KeepReadingState>(
             builder: (context, state) {
@@ -37,12 +38,12 @@ class KeepReadingComponent extends StatelessWidget {
                 },
                 loading: (value) => const BookItemLoading(itemCount: 3),
                 loaded: (value) => ListView.builder(
-                  itemCount: value.keepReadingBooks.length,
+                  itemCount: 3,//value.keepReadingBooks.length,
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
                   itemBuilder: (context, index) => KeepReadingBookItem(bookModel: value.keepReadingBooks[index]),
                 ),
-                error: (value) => const BookItemLoading(itemCount: 3),
+                error: (value) => ErrorComponent(errorReason: value.error),
               );
             },
           ),
