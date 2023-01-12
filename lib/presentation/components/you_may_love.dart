@@ -34,39 +34,39 @@ class YouMayLoveComponent extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
-            height: 235.h,
-            child: ListView.builder(
-              itemCount: books.length,
-              scrollDirection: Axis.horizontal,
-              physics: const BouncingScrollPhysics(),
-              padding: EdgeInsets.only(left: 24.w),
-              itemBuilder: (context, index) {
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    BookPicture(
-                      width: 108.w,
-                      height: 166.h,
-                      borderRadius: [4.r, 8.r, 8.r, 4.r],
-                      imagePath: books[index].image,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(top: 16.h, bottom: 8.h),
-                      child: Text(
-                        books[index].category,
-                        style: AppTextStyles.h5.copyWith(color: AppColors.text2),
-                      ),
-                    ),
-                    Text(
-                      books[index].author,
-                      style: AppTextStyles.h5.copyWith(color: AppColors.border),
-                    ),
-                  ],
-                );
-              },
-            ),
-          ),
+          // SizedBox(
+          //   height: 235.h,
+          //   child: ListView.builder(
+          //     itemCount: books.length,
+          //     scrollDirection: Axis.horizontal,
+          //     physics: const BouncingScrollPhysics(),
+          //     padding: EdgeInsets.only(left: 24.w),
+          //     itemBuilder: (context, index) {
+          //       return Column(
+          //         crossAxisAlignment: CrossAxisAlignment.start,
+          //         children: [
+          //           BookPicture(
+          //             width: 108.w,
+          //             height: 166.h,
+          //             borderRadius: [4.r, 8.r, 8.r, 4.r],
+          //             imagePath: books[index].image,
+          //           ),
+          //           Padding(
+          //             padding: EdgeInsets.only(top: 16.h, bottom: 8.h),
+          //             child: Text(
+          //               books[index].category,
+          //               style: AppTextStyles.h5.copyWith(color: AppColors.text2),
+          //             ),
+          //           ),
+          //           Text(
+          //             books[index].author,
+          //             style: AppTextStyles.h5.copyWith(color: AppColors.border),
+          //           ),
+          //         ],
+          //       );
+          //     },
+          //   ),
+          // ),
         ],
       ),
     );

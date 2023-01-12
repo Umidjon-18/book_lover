@@ -1,5 +1,8 @@
+import 'package:book_lover/config/constants/app_colors.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shimmer/shimmer.dart';
 
 class BookPicture extends StatelessWidget {
   const BookPicture({
@@ -23,16 +26,28 @@ class BookPicture extends StatelessWidget {
       width: width ?? 64.w,
       height: height ?? 98.h,
       margin: margin ?? EdgeInsets.only(right: 24.w),
-      decoration: BoxDecoration(
+      child: ClipRRect(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(borderRadius?[0] ?? 2.r),
           topRight: Radius.circular(borderRadius?[1] ?? 6.r),
           bottomRight: Radius.circular(borderRadius?[2] ?? 6.r),
           bottomLeft: Radius.circular(borderRadius?[3] ?? 2.r),
         ),
-        image: DecorationImage(
-          image: AssetImage(imagePath),
-          fit: BoxFit.cover,
+        child: CachedNetworkImage(
+          imageUrl: imagePath,
+          placeholder: (context, url) => Shimmer.fromColors(
+            baseColor: Colors.grey[300]!,
+            highlightColor: Colors.grey[100]!,
+            child: Container(
+              width: width ?? 64.w,
+              height: height ?? 98.h,
+              color: AppColors.bgColor,
+            ),
+          ),
+          errorWidget: (context, url, error) => Container(
+            color: Colors.red,
+            child: const Icon(Icons.error),
+          ),
         ),
       ),
     );

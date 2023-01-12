@@ -28,7 +28,7 @@ class BookItem extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              BookPicture(imagePath: bookModel.image),
+              BookPicture(imagePath: bookModel.images[0].href),
               Flexible(
                 fit: FlexFit.tight,
                 child: Column(
@@ -36,16 +36,16 @@ class BookItem extends StatelessWidget {
                   children: [
                     SizedBox(
                       width: 200.w,
-                      child: Text(bookModel.name, style: AppTextStyles.h3),
+                      child: Text(bookModel.metadata.title, style: AppTextStyles.h3),
                     ),
                     InkWell(
                       onTap: () => Navigator.pushNamed(context, Routes.categoryPage),
                       child: Padding(
                         padding: EdgeInsets.only(top: 8.h, bottom: 12.h),
-                        child: Text(bookModel.category, style: AppTextStyles.h5.copyWith(color: AppColors.text2)),
+                        child: Text(bookModel.metadata.subject.first.name, style: AppTextStyles.h5.copyWith(color: AppColors.text2)),
                       ),
                     ),
-                    Text(bookModel.author, style: AppTextStyles.h5.copyWith(color: AppColors.text2)),
+                    Text(bookModel.metadata.author.first.name, style: AppTextStyles.h5.copyWith(color: AppColors.text2)),
                   ],
                 ),
               ),

@@ -33,37 +33,37 @@ class AuthorsForYouComponent extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
-            height: 170.h,
-            child: ListView.separated(
-              itemCount: authors.length,
-              scrollDirection: Axis.horizontal,
-              physics: const BouncingScrollPhysics(),
-              padding: EdgeInsets.only(left: 24.w),
-              itemBuilder: (context, index) {
-                return Column(
-                  children: [
-                    CircleAvatar(
-                      radius: 54.r,
-                      foregroundImage: AssetImage(authors[index].image),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(top: 12.h, bottom: 8.h),
-                      child: Text(
-                        authors[index].name,
-                        style: AppTextStyles.h3,
-                      ),
-                    ),
-                    Text(
-                      authors[index].category,
-                      style: AppTextStyles.h6.copyWith(color: AppColors.text2),
-                    ),
-                  ],
-                );
-              },
-              separatorBuilder: (context, index) => SizedBox(width: 24.w),
-            ),
-          ),
+          // SizedBox(
+          //   height: 170.h,
+          //   child: ListView.separated(
+          //     itemCount: authors.length,
+          //     scrollDirection: Axis.horizontal,
+          //     physics: const BouncingScrollPhysics(),
+          //     padding: EdgeInsets.only(left: 24.w),
+          //     itemBuilder: (context, index) {
+          //       return Column(
+          //         children: [
+          //           CircleAvatar(
+          //             radius: 54.r,
+          //             foregroundImage: AssetImage(authors[index].image),
+          //           ),
+          //           Padding(
+          //             padding: EdgeInsets.only(top: 12.h, bottom: 8.h),
+          //             child: Text(
+          //               authors[index].name,
+          //               style: AppTextStyles.h3,
+          //             ),
+          //           ),
+          //           Text(
+          //             authors[index].category,
+          //             style: AppTextStyles.h6.copyWith(color: AppColors.text2),
+          //           ),
+          //         ],
+          //       );
+          //     },
+          //     separatorBuilder: (context, index) => SizedBox(width: 24.w),
+          //   ),
+          // ),
         ],
       ),
     );

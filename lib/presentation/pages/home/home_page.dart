@@ -5,7 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import '../../../config/constants/app_colors.dart';
 import '../../../config/constants/assets.dart';
 import '../../components/authors_for_you.dart';
-import '../../components/keep_reading.dart';
+import 'components/keep_reading.dart';
 import '../../components/more_books_for_you.dart';
 import '../../components/my_appbar.dart';
 import '../../components/trending_books.dart';
@@ -32,9 +32,9 @@ class _HomePageState extends State<HomePage> {
             Image.asset(Assets.images.banner),
             const KeepReadingComponent(),
             const TrendingBooksComponent(),
-            const YouMayLoveComponent(),
-            const AuthorsForYouComponent(),
-            const MoreBooksForYouComponent()
+            // const YouMayLoveComponent(),
+            // const AuthorsForYouComponent(),
+            // const MoreBooksForYouComponent()
           ],
         ),
       ),

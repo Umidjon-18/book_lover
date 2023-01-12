@@ -25,15 +25,15 @@ class _SearchPageState extends State<SearchPage> {
   @override
   void initState() {
     super.initState();
-    textEditingController.addListener(() {
-      searchBooks.clear();
-      for (var i = 0; i < books.length; i++) {
-        if (books[i].name.toLowerCase().contains(textEditingController.text.toLowerCase())) {
-          searchBooks.add(books[i]);
-        }
-      }
-      setState(() {});
-    });
+    // textEditingController.addListener(() {
+    //   searchBooks.clear();
+    //   for (var i = 0; i < books.length; i++) {
+    //     if (books[i].name.toLowerCase().contains(textEditingController.text.toLowerCase())) {
+    //       searchBooks.add(books[i]);
+    //     }
+    //   }
+    //   setState(() {});
+    // });
   }
 
   @override
@@ -100,20 +100,20 @@ class _SearchPageState extends State<SearchPage> {
                         ),
                       ],
                     ),
-                    Expanded(
-                      child: ListView.builder(
-                        shrinkWrap: true,
-                        itemCount: recentlySearched.length,
-                        physics: const BouncingScrollPhysics(),
-                        itemBuilder: (context, index) => Container(
-                          height: 80.h,
-                          width: double.maxFinite,
-                          alignment: Alignment.centerLeft,
-                          decoration: const BoxDecoration(border: Border(top: BorderSide(color: AppColors.border))),
-                          child: Text(recentlySearched[index].name, style: AppTextStyles.h5),
-                        ),
-                      ),
-                    ),
+                    // Expanded(
+                    //   child: ListView.builder(
+                    //     shrinkWrap: true,
+                    //     itemCount: recentlySearched.length,
+                    //     physics: const BouncingScrollPhysics(),
+                    //     itemBuilder: (context, index) => Container(
+                    //       height: 80.h,
+                    //       width: double.maxFinite,
+                    //       alignment: Alignment.centerLeft,
+                    //       decoration: const BoxDecoration(border: Border(top: BorderSide(color: AppColors.border))),
+                    //       child: Text(recentlySearched[index].name, style: AppTextStyles.h5),
+                    //     ),
+                    //   ),
+                    // ),
                   ],
                 ),
               )
@@ -202,15 +202,15 @@ class SearchBookItem extends StatelessWidget {
         decoration: const BoxDecoration(border: Border(top: BorderSide(color: AppColors.border))),
         child: Row(
           children: [
-            BookPicture(imagePath: bookModel.image, width: 32.w, height: 48.h),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(bookModel.name, style: AppTextStyles.h3),
-                Text(bookModel.author, style: AppTextStyles.h6.copyWith(color: AppColors.text2)),
-              ],
-            ),
+            // BookPicture(imagePath: bookModel.image, width: 32.w, height: 48.h),
+            // Column(
+            //   mainAxisAlignment: MainAxisAlignment.center,
+            //   crossAxisAlignment: CrossAxisAlignment.start,
+            //   children: [
+            //     Text(bookModel.name, style: AppTextStyles.h3),
+            //     Text(bookModel.author, style: AppTextStyles.h6.copyWith(color: AppColors.text2)),
+            //   ],
+            // ),
           ],
         ),
       ),

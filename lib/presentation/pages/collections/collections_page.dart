@@ -90,16 +90,16 @@ class CollectionsItem extends StatelessWidget {
           ],
         ),
         Text("${collectionModel.books.length} books", style: AppTextStyles.h6.copyWith(color: AppColors.text2)),
-        Container(
-          height: 100.h,
-          margin: EdgeInsets.only(top: 16.h, right: 24.w, bottom: 24.h),
-          child: ListView.builder(
-            itemCount: collectionModel.books.length,
-            physics: const BouncingScrollPhysics(),
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) => BookPicture(imagePath: collectionModel.books[index].image),
-          ),
-        ),
+        // Container(
+        //   height: 100.h,
+        //   margin: EdgeInsets.only(top: 16.h, right: 24.w, bottom: 24.h),
+        //   child: ListView.builder(
+        //     itemCount: collectionModel.books.length,
+        //     physics: const BouncingScrollPhysics(),
+        //     scrollDirection: Axis.horizontal,
+        //     itemBuilder: (context, index) => BookPicture(imagePath: collectionModel.books[index].image),
+        //   ),
+        // ),
         if (bottomBorder)
           Container(
             height: 1.h,

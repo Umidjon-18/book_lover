@@ -15,13 +15,25 @@ dependencies:
   flutter_svg: ^1.1.6
   cupertino_icons: ^1.0.2
   flutter_screenutil: ^5.5.4
-  infinite_scroll_pagination: ^3.2.0
+  flutter_bloc: ^8.1.1
+  freezed_annotation: ^2.2.0
+  json_annotation:
+  retrofit: ^3.3.1
+  lint: ^2.0.1
+  dio: ^4.0.6
+  get_it: ^7.2.0
+  shimmer: ^2.0.0
+  cached_network_image: ^3.2.3
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+  freezed: ^2.3.2
+  build_runner: 
+  json_serializable: 
   flutter_lints: ^2.0.0
+  retrofit_generator: '>=4.0.0 <5.0.0'
 
 
 flutter:
