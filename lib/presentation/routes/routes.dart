@@ -2,11 +2,14 @@ import 'package:book_lover/presentation/pages/author/author_page.dart';
 import 'package:book_lover/presentation/pages/category/category_page.dart';
 import 'package:book_lover/presentation/pages/category/category_search_page.dart';
 import 'package:book_lover/presentation/pages/home/home_page.dart';
+import 'package:book_lover/presentation/pages/interests/customize_interests_page.dart';
 import 'package:book_lover/presentation/pages/main/main_page.dart';
 import 'package:book_lover/presentation/pages/notifications/notifications_page.dart';
 import 'package:book_lover/presentation/pages/profile/profile_page.dart';
 import 'package:book_lover/presentation/pages/register/register_page.dart';
 import 'package:book_lover/presentation/pages/search/search_page.dart';
+import 'package:book_lover/presentation/pages/support/faq_page.dart';
+import 'package:book_lover/presentation/pages/support/support_page.dart';
 import 'package:book_lover/presentation/pages/trendings/trendings_page.dart';
 import 'package:flutter/material.dart';
 
@@ -24,6 +27,9 @@ class Routes {
   static const searchPage = '/searchPage';
   static const categorySearchPage = '/categorySearchPage';
   static const profilePage = '/profilePage';
+  static const customizeInterestsPage = '/customizeInterestsPage';
+  static const supportPage = '/supportPage';
+  static const faqPage = '/faqPage';
 
   static Route<dynamic> generateRoute(RouteSettings routeSettings) {
     try {
@@ -94,6 +100,24 @@ class Routes {
           return MaterialPageRoute(
             builder: (context) {
               return const ProfilePage();
+            },
+          );
+        case customizeInterestsPage:
+          return MaterialPageRoute(
+            builder: (context) {
+              return const CustomizeInterestsPage();
+            },
+          );
+        case supportPage:
+          return MaterialPageRoute(
+            builder: (context) {
+              return const SupportPage();
+            },
+          );
+        case faqPage:
+          return MaterialPageRoute(
+            builder: (context) {
+              return const FAQPage();
             },
           );
         default:

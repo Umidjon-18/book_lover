@@ -17,18 +17,18 @@ class PageTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(title, style: AppTextStyles.title),
-        Padding(
-          padding: padding ?? EdgeInsets.only(right: 24.w, bottom: 40.h),
-          child: Text(
+    return Padding(
+      padding: padding ?? EdgeInsets.only(right: 24.w, bottom: 40.h),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(title, style: AppTextStyles.title),
+          Text(
             subtitle,
             style: AppTextStyles.h5.copyWith(color: AppColors.text2),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

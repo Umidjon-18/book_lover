@@ -49,10 +49,16 @@ class _AccountPageState extends State<AccountPage> {
                 itemName: "My profile",
                 onTap: () => Navigator.pushNamed(context, Routes.profilePage),
               ),
-              AccountItem(onTap: () {}, itemName: "Customize interests"),
+              AccountItem(
+                itemName: "Customize interests",
+                onTap: () => Navigator.pushNamed(context, Routes.customizeInterestsPage),
+              ),
               AccountItem(onTap: () {}, itemName: "History reading list"),
               AccountItem(onTap: () {}, itemName: "History purchase"),
-              AccountItem(onTap: () {}, itemName: "Support"),
+              AccountItem(
+                itemName: "Support",
+                onTap: () => Navigator.pushNamed(context, Routes.supportPage),
+              ),
               AccountItem(onTap: () {}, itemName: "Refer a friend"),
               AccountItem(onTap: () {}, itemName: "Logout"),
             ],
