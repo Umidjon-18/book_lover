@@ -2,6 +2,7 @@ import 'package:book_lover/presentation/pages/collections/collections_page.dart'
 import 'package:book_lover/presentation/pages/home/home_page.dart';
 import 'package:book_lover/presentation/pages/notifications/notifications_page.dart';
 import 'package:book_lover/presentation/pages/trendings/trendings_page.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -28,10 +29,8 @@ class _MainPageState extends State<MainPage> {
         controller: pageController,
         children: [
           const HomePage(),
-          const HomePage(),
-          const HomePage(),
-          // const TrendingsPage(),
-          // const CollectionsPage(),
+          const TrendingsPage(),
+          const CollectionsPage(),
           const NotificationsPage(),
           Container(),
         ],
@@ -42,10 +41,10 @@ class _MainPageState extends State<MainPage> {
             return BottomNavigationBar(
               type: BottomNavigationBarType.fixed,
               onTap: (value) {
-                pageController.animateToPage(
+                pageController.jumpToPage(
                   value,
-                  duration: const Duration(milliseconds: 400),
-                  curve: Curves.easeIn,
+                  // duration: const Duration(milliseconds: 400),
+                  // curve: Curves.easeIn,
                 );
                 currentBottomIndex.value = value;
               },
@@ -71,23 +70,26 @@ class _MainPageState extends State<MainPage> {
                   icon: Padding(
                     padding: EdgeInsets.only(bottom: 4.h),
                     child: SvgPicture.asset(Assets.icons.save,
-                      color: currentBottomIndex.value == 2 ? AppColors.mainColor : null),
+                        color: currentBottomIndex.value == 2 ? AppColors.mainColor : null),
                   ),
                   label: "Save",
                 ),
                 BottomNavigationBarItem(
                   icon: Padding(
-                    padding: EdgeInsets.only(bottom: 4.h),
-                    child: SvgPicture.asset(Assets.icons.inbox,
-                      color: currentBottomIndex.value == 3 ? AppColors.mainColor : null),
+                    padding: EdgeInsets.only(bottom: 0.h),
+                    child: Icon(
+                      Icons.notifications,
+                      size: 21.h,
+                      color: currentBottomIndex.value == 3 ? AppColors.mainColor : null,
+                    ),
                   ),
                   label: "Inbox",
                 ),
                 BottomNavigationBarItem(
-                  icon: Padding(
-                    padding: EdgeInsets.only(bottom: 4.h),
-                    child: SvgPicture.asset(Assets.icons.settings,
-                      color: currentBottomIndex.value == 4 ? AppColors.mainColor : null),
+                  icon: Icon(
+                    CupertinoIcons.person_alt_circle,
+                    size: 21.h,
+                    color: currentBottomIndex.value == 4 ? AppColors.mainColor : null,
                   ),
                   label: "Account",
                 ),

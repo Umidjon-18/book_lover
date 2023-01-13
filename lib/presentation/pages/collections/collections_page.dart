@@ -8,11 +8,14 @@ import 'package:book_lover/presentation/components/custom_textfield.dart';
 import 'package:book_lover/presentation/components/my_text_button.dart';
 import 'package:book_lover/presentation/components/page_title.dart';
 import 'package:book_lover/presentation/components/primary_button.dart';
+import 'package:book_lover/presentation/pages/collections/bloc/collections_page_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../components/delete_snackbar.dart';
+import 'bloc/collections_page_state.dart';
 
 class CollectionsPage extends StatefulWidget {
   const CollectionsPage({super.key});
@@ -40,13 +43,11 @@ class _CollectionsPageState extends State<CollectionsPage> {
                 subtitle: "Save your favourite books now and discover them  later. Only you can see your collection",
                 padding: EdgeInsets.only(right: 24.w, bottom: 40.h),
               ),
-              ...List.generate(
-                collections.length,
-                (index) => CollectionsItem(
-                  collectionModel: collections[index],
-                  bottomBorder: index != collections.length - 1,
-                ),
-              ),
+              BlocBuilder<CollectionsPageCubit, CollectionsPageState>(
+                builder: (context, state) {
+                  return Container();
+                },
+              )
             ],
           ),
         ),
