@@ -4,6 +4,7 @@ import 'package:book_lover/presentation/pages/category/category_search_page.dart
 import 'package:book_lover/presentation/pages/home/home_page.dart';
 import 'package:book_lover/presentation/pages/main/main_page.dart';
 import 'package:book_lover/presentation/pages/notifications/notifications_page.dart';
+import 'package:book_lover/presentation/pages/profile/profile_page.dart';
 import 'package:book_lover/presentation/pages/register/register_page.dart';
 import 'package:book_lover/presentation/pages/search/search_page.dart';
 import 'package:book_lover/presentation/pages/trendings/trendings_page.dart';
@@ -22,6 +23,7 @@ class Routes {
   static const notificationsPage = '/notificationsPage';
   static const searchPage = '/searchPage';
   static const categorySearchPage = '/categorySearchPage';
+  static const profilePage = '/profilePage';
 
   static Route<dynamic> generateRoute(RouteSettings routeSettings) {
     try {
@@ -86,6 +88,12 @@ class Routes {
           return MaterialPageRoute(
             builder: (context) {
               return const CategorySearchPage();
+            },
+          );
+        case profilePage:
+          return MaterialPageRoute(
+            builder: (context) {
+              return const ProfilePage();
             },
           );
         default:
