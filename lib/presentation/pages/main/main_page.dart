@@ -9,6 +9,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../config/constants/app_colors.dart';
 import '../../../config/constants/assets.dart';
+import '../profile/profile_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -27,12 +28,12 @@ class _MainPageState extends State<MainPage> {
       backgroundColor: AppColors.bgColor,
       body: PageView(
         controller: pageController,
-        children: [
-          const HomePage(),
-          const TrendingsPage(),
-          const CollectionsPage(),
-          const NotificationsPage(),
-          Container(),
+        children: const [
+          HomePage(),
+          TrendingsPage(),
+          CollectionsPage(),
+          NotificationsPage(),
+          ProfilePage(),
         ],
       ),
       bottomNavigationBar: ValueListenableBuilder<int>(
