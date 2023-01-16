@@ -51,6 +51,8 @@ class _Icons extends _AssetsHolder {
   String get trending => "$basePath/ic_trending.svg";
   
   String get arrowLeft => "$basePath/ic_arrow_left.svg";
+
+  String get arrowRight => "$basePath/ic_arrow_right.svg";
   
   String get close => "$basePath/ic_close.svg";
   

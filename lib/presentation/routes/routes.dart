@@ -117,7 +117,7 @@ class Routes {
         case faqPage:
           return MaterialPageRoute(
             builder: (context) {
-              return const FAQPage();
+              return FAQPage(question: args?["question"],answer: args?["answer"]);
             },
           );
         default:

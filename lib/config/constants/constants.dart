@@ -12,3 +12,9 @@ class Urls {
   static String romance = 'top.json?cat=FBFIC027000';
   static String horror = 'top.json?cat=FBFIC015000';
 }
+
+Map<String, String> faq = {
+  "Membership and single purchase?":
+      '''With single purchase, when you buy a book, you will read it lifetime. You should use it when you don’t have more time to read book.
+With membership, you will pay once and access to all our books in period time based on your package. It should be used when you have more time to read more books.'''
+};

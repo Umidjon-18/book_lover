@@ -5,6 +5,8 @@ import 'package:book_lover/presentation/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../components/account_item.dart';
+
 class AccountPage extends StatefulWidget {
   const AccountPage({super.key});
 
@@ -54,44 +56,13 @@ class _AccountPageState extends State<AccountPage> {
                 onTap: () => Navigator.pushNamed(context, Routes.customizeInterestsPage),
               ),
               AccountItem(onTap: () {}, itemName: "History reading list"),
-              AccountItem(onTap: () {}, itemName: "History purchase"),
               AccountItem(
                 itemName: "Support",
                 onTap: () => Navigator.pushNamed(context, Routes.supportPage),
               ),
-              AccountItem(onTap: () {}, itemName: "Refer a friend"),
               AccountItem(onTap: () {}, itemName: "Logout"),
             ],
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class AccountItem extends StatelessWidget {
-  const AccountItem({
-    super.key,
-    required this.onTap,
-    required this.itemName,
-  });
-  final Function() onTap;
-  final String itemName;
-
-  @override
-  Widget build(BuildContext context) {
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(
-        onTap: onTap,
-        child: Container(
-          height: 66.h,
-          width: double.maxFinite,
-          alignment: Alignment.centerLeft,
-          decoration: BoxDecoration(
-            border: Border(top: BorderSide(color: AppColors.border, width: 1.h)),
-          ),
-          child: Text(itemName, style: AppTextStyles.h5),
         ),
       ),
     );
